@@ -1,69 +1,106 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th = "https://www.thymeleaf.org/">-->
+
+<!--<head th:replace="~{fragments::header}">-->
+<!--</head>-->
+
+<!--<body class="bg-gradient-primary">-->
+
+<!--    <div class="container">-->
+
+<!--        &lt;!&ndash; Outer Row &ndash;&gt;-->
+<!--        <div class="row justify-content-center">-->
+
+<!--            <div class="col-xl-10 col-lg-12 col-md-9">-->
+
+<!--                <div class="card o-hidden border-0 shadow-lg my-5">-->
+<!--                    <div class="card-body p-0">-->
+<!--                        &lt;!&ndash; Nested Row within Card Body &ndash;&gt;-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
+<!--                            <div class="col-lg-6">-->
+<!--                                <div class="p-5">-->
+<!--                                    <div class="text-center">-->
+<!--                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>-->
+<!--                                    </div>-->
+<!--                                    <div th:if = "${param.error}" class="alert alert-danger text-center">-->
+<!--                                        Invalid username or password-->
+<!--                                    </div>-->
+<!--                                    <div th:if = "${param.logout}" class="alert alert-success text-center">-->
+<!--                                        You have been logged out!-->
+<!--                                    </div>-->
+<!--                                    <form class="user" th:action="@{/do-login}" method="post">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <input type="email" name="username" class="form-control form-control-user"-->
+<!--                                                id="username" aria-describedby="emailHelp"-->
+<!--                                                placeholder="Enter Email Address...">-->
+<!--                                        </div>-->
+<!--                                        <div class="form-group">-->
+<!--                                            <input type="password" name="password" id="password" class="form-control form-control-user"-->
+<!--                                                 placeholder="Password">-->
+<!--                                        </div>-->
+<!--                                        <button type="submit" class="btn btn-primary btn-user btn-block">-->
+<!--                                            Login-->
+<!--                                        </button>-->
+<!--                                        <hr>-->
+<!--                                    </form>-->
+<!--                                    <hr>-->
+<!--                                    <div class="text-center">-->
+<!--                                        <a class="small" th:href = "@{/forgot-password}" href="forgot-password.html">Forgot Password?</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="text-center">-->
+<!--                                        <a class="small" th:href = "@{/register}" href="register.html">Create an Account!</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--<div th:replace="~{fragments::script}"></div>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Glassmorphism login Form Tutorial in html css</title>
 
-<head th:replace="~{fragments::header}">
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css}">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{css/login.css}">
+
 </head>
+<body>
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<form>
+    <h3>Login Here</h3>
 
-<body class="bg-gradient-primary">
+    <label for="username">Username</label>
+    <input type="text" placeholder="Email or Phone" id="username">
 
-    <div class="container">
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="password">
 
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <div th:if = "${param.error}" class="alert alert-danger text-center">
-                                        Invalid username or password
-                                    </div>
-                                    <div th:if = "${param.logout}" class="alert alert-success text-center">
-                                        You have been logged out!
-                                    </div>
-                                    <form class="user" th:action="@{/do-login}" method="post">
-                                        <div class="form-group">
-                                            <input type="email" name="username" class="form-control form-control-user"
-                                                id="username" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" id="password" class="form-control form-control-user"
-                                                 placeholder="Password">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </button>
-                                        <hr>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" th:href = "@{/forgot-password}" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" th:href = "@{/register}" href="register.html">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
+    <button>Log In</button>
+    <div class="social">
+        <a th:href="@{forgot-password}"><div class="go"> Forgot Password</div></a>
+        <a th:href="@{register}"><div class="fb">  Create an Account</div></a>
     </div>
-
-<div th:replace="~{fragments::script}"></div>
+</form>
 </body>
-
 </html>

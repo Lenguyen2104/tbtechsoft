@@ -1,5 +1,6 @@
 package com.ecommerce.admin.controller;
 
+import com.ecommerce.admin.service.AuthService;
 import com.ecommerce.library.dto.AdminDto;
 import com.ecommerce.library.model.Admin;
 import com.ecommerce.library.service.AdminService;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class AuthController {
     private final AdminService adminService;
+    private final AuthService authService;
 
     private final BCryptPasswordEncoder passwordEncoder;
 
@@ -58,37 +60,36 @@ public class AuthController {
     public String addNewAdmin(@Valid @ModelAttribute("adminDto") AdminDto adminDto,
                               BindingResult result,
                               Model model) {
-
-        try {
-
-            if (result.hasErrors()) {
-                model.addAttribute("adminDto", adminDto);
-                return "register";
-            }
-            String username = adminDto.getUsername();
-            Admin admin = adminService.findByUsername(username);
-            if (admin != null) {
-                model.addAttribute("adminDto", adminDto);
-                System.out.println("admin not null");
-                model.addAttribute("emailError", "Your email has been registered!");
-                return "register";
-            }
-            if (adminDto.getPassword().equals(adminDto.getRepeatPassword())) {
-                adminDto.setPassword(passwordEncoder.encode(adminDto.getPassword()));
-                adminService.save(adminDto);
-                System.out.println("success");
-                model.addAttribute("success", "Register successfully!");
-                model.addAttribute("adminDto", adminDto);
-            } else {
-                model.addAttribute("adminDto", adminDto);
-                model.addAttribute("passwordError", "Your password maybe wrong! Check again!");
-                System.out.println("password not same");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            model.addAttribute("errors", "The server has been wrong!");
-        }
-        return "register";
-
+//        try {
+//
+//            if (result.hasErrors()) {
+//                model.addAttribute("adminDto", adminDto);
+//                return "register";
+//            }
+//            String username = adminDto.getUsername();
+//            Admin admin = adminService.findByUsername(username);
+//            if (admin != null) {
+//                model.addAttribute("adminDto", adminDto);
+//                System.out.println("admin not null");
+//                model.addAttribute("emailError", "Your email has been registered!");
+//                return "register";
+//            }
+//            if (adminDto.getPassword().equals(adminDto.getRepeatPassword())) {
+//                adminDto.setPassword(passwordEncoder.encode(adminDto.getPassword()));
+//                adminService.save(adminDto);
+//                System.out.println("success");
+//                model.addAttribute("success", "Register successfully!");
+//                model.addAttribute("adminDto", adminDto);
+//            } else {
+//                model.addAttribute("adminDto", adminDto);
+//                model.addAttribute("passwordError", "Your password maybe wrong! Check again!");
+//                System.out.println("password not same");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            model.addAttribute("errors", "The server has been wrong!");
+//        }
+//        return "register";
+        return authService.addNewAdmin(adminDto, result, model);
     }
 }
