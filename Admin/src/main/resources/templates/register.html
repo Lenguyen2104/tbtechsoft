@@ -1,91 +1,180 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th = "https://www.thymeleaf.org/" >-->
+<!--<head th:replace = "~{fragments::header}">-->
+<!--</head>-->
+<!--<body class="bg-gradient-primary">-->
+<!--    <div class="container">-->
+<!--        <div class="card o-hidden border-0 shadow-lg my-5">-->
+<!--            <div class="card-body p-0">-->
+<!--                &lt;!&ndash; Nested Row within Card Body &ndash;&gt;-->
+<!--                <div class="row">-->
+<!--                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>-->
+<!--                    <div class="col-lg-7">-->
+<!--                        <div class="p-5">-->
+<!--                            <div class="text-center">-->
+<!--                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>-->
+<!--                            </div>-->
+<!--                            <div th:if = "${emailError}">-->
+<!--                                <p class = "alert alert-danger" th:text = "${emailError}"></p>-->
+<!--                            </div>-->
+<!--                            <div th:if = "${errors}">-->
+<!--                                <p class = "alert alert-danger" th:text = "${errors}"></p>-->
+<!--                            </div>-->
+<!--                            <div th:if = "${success}">-->
+<!--                                <p class = "alert alert-success" th:text = "${success}"></p>-->
+<!--                            </div>-->
+<!--                            <div th:if = "${passwordError}">-->
+<!--                                <p class = "alert alert-danger" th:text = "${passwordError}"></p>-->
+<!--                            </div>-->
+
+
+<!--                            <form th:action = "@{/register-new}" th:object = "${adminDto}" method="POST">-->
+<!--                                <div class="form-group row">-->
+<!--                                    <div class="col-sm-6 mb-3 mb-sm-0">-->
+<!--                                        <input type="text" class="form-control form-control-user" th:field = "*{firstName}" id="exampleFirstName"-->
+<!--                                            placeholder="First Name">-->
+<!--                                        <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"-->
+<!--                                             th:errors = "*{firstName}"-->
+<!--                                        ></div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="col-sm-6">-->
+<!--                                        <input type="text" th:field = "*{lastName}" class="form-control form-control-user" id="exampleLastName"-->
+<!--                                            placeholder="Last Name">-->
+<!--                                        <div class="alert alert-danger" th:if = "${#fields.hasErrors('lastName')}"-->
+<!--                                            th:errors = "*{lastName}"-->
+<!--                                        ></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <input type="email" th:field = "*{username}" class="form-control form-control-user" id="exampleInputEmail"-->
+<!--                                        placeholder="Email Username">-->
+<!--                                </div>-->
+<!--                                <div class="form-group row">-->
+<!--                                    <div class="col-sm-6 mb-3 mb-sm-0">-->
+<!--                                        <input type="password" th:field = "*{password}" class="form-control form-control-user"-->
+<!--                                            id="exampleInputPassword" placeholder="Password">-->
+
+<!--                                        <div class="alert alert-danger" th:if = "${#fields.hasErrors('password')}"-->
+<!--                                            th:errors = "*{password}"-->
+<!--                                        ></div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-sm-6">-->
+<!--                                        <input type="password" th:field = "*{repeatPassword}" class="form-control form-control-user"-->
+<!--                                            id="exampleRepeatPassword" placeholder="Repeat Password">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <button type="submit" class="btn btn-primary btn-user btn-block">-->
+<!--                                    Register Account-->
+<!--                                </button>-->
+<!--                                <hr>-->
+<!--                            </form>-->
+<!--                            <hr>-->
+<!--                            <div class="text-center">-->
+<!--                                <a class="small" th:href = "@{/forgot-password}">Forgot Password?</a>-->
+<!--                            </div>-->
+<!--                            <div class="text-center">-->
+<!--                                <a class="small" th:href = "@{/login}">Already have an account? Login!</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--    <div th:replace="~{fragments::script}"></div>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "https://www.thymeleaf.org/" >
-<head th:replace = "~{fragments::header}">
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr" xmlns:th = "https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title> Responsive Registration Form | CodingLab </title>
+    <link rel="stylesheet" th:href="@{css/register.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class="bg-gradient-primary">
-    <div class="container">
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                            </div>
-                            <div th:if = "${emailError}">
-                                <p class = "alert alert-danger" th:text = "${emailError}"></p>
-                            </div>
-                            <div th:if = "${errors}">
-                                <p class = "alert alert-danger" th:text = "${errors}"></p>
-                            </div>
-                            <div th:if = "${success}">
-                                <p class = "alert alert-success" th:text = "${success}"></p>
-                            </div>
-                            <div th:if = "${passwordError}">
-                                <p class = "alert alert-danger" th:text = "${passwordError}"></p>
-                            </div>
-
-
-                            <form th:action = "@{/register-new}" th:object = "${adminDto}" method="POST">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" th:field = "*{firstName}" id="exampleFirstName"
-                                            placeholder="First Name">
-                                        <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"
-                                             th:errors = "*{firstName}"
-                                        ></div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <input type="text" th:field = "*{lastName}" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
-                                        <div class="alert alert-danger" th:if = "${#fields.hasErrors('lastName')}"
-                                            th:errors = "*{lastName}"
-                                        ></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" th:field = "*{username}" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Username">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" th:field = "*{password}" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-
-                                        <div class="alert alert-danger" th:if = "${#fields.hasErrors('password')}"
-                                            th:errors = "*{password}"
-                                        ></div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" th:field = "*{repeatPassword}" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
-                                    Register Account
-                                </button>
-                                <hr>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" th:href = "@{/forgot-password}">Forgot Password?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" th:href = "@{/login}">Already have an account? Login!</a>
-                            </div>
-                        </div>
+<body>
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+        <div th:if="${emailError}">
+            <p class="alert alert-danger" th:text="${emailError}"></p>
+        </div>
+        <div th:if="${errors}">
+            <p class="alert alert-danger" th:text="${errors}"></p>
+        </div>
+        <div th:if="${success}">
+            <p class="alert alert-success" th:text="${success}"></p>
+        </div>
+        <div th:if="${passwordError}">
+            <p class="alert alert-danger" th:text="${passwordError}"></p>
+        </div>
+        <form th:action="@{/register-new}" th:object="${adminDto}" method="post">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Full Name</span>
+                    <input type="text" placeholder="Enter your name" th:field="*{firstName}" required>
+<!--                    <div class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"-->
+<!--                         th:errors="*{firstName}">-->
+<!--                    </div>-->
+                </div>
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter your username" th:field="*{lastName}" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Enter your email" th:field="*{username}" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="text" placeholder="Enter your number" th:field="*{phoneNumber}" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" placeholder="Enter your password" th:field="*{password}" required>
+                    <div class="alert alert-danger" th:if="${#fields.hasErrors('password')}"
+                         th:errors="*{password}">
                     </div>
                 </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="password" placeholder="Confirm your password" th:field="*{repeatPassword}" required>
+                </div>
             </div>
-        </div>
-
+<!--            <div class="gender-details">-->
+<!--                <input type="radio" name="gender" id="dot-1">-->
+<!--                <input type="radio" name="gender" id="dot-2">-->
+<!--                <input type="radio" name="gender" id="dot-3">-->
+<!--                <span class="gender-title">Gender</span>-->
+<!--                <div class="category">-->
+<!--                    <label for="dot-1">-->
+<!--                        <span class="dot one"></span>-->
+<!--                        <span class="gender">Male</span>-->
+<!--                    </label>-->
+<!--                    <label for="dot-2">-->
+<!--                        <span class="dot two"></span>-->
+<!--                        <span class="gender">Female</span>-->
+<!--                    </label>-->
+<!--                    <label for="dot-3">-->
+<!--                        <span class="dot three"></span>-->
+<!--                        <span class="gender">Prefer not to say</span>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
     </div>
-
-    <div th:replace="~{fragments::script}"></div>
+</div>
 
 </body>
-
 </html>

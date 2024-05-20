@@ -6,7 +6,8 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #080710;
+    /*background-color: #080710;*/
+    background-color: #4B6EBE;
 }
 .background{
     width: 430px;
