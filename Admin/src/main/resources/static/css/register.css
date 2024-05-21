@@ -12,7 +12,7 @@ body{
     align-items: center;
     padding: 10px;
     /*background: linear-gradient(135deg, #71b7e6, #9b59b6);*/
-    background: linear-gradient(135deg, #47C7E9, #4B6EBE);
+    background: linear-gradient(135deg, #4B6EBE, #1a1a2e);
 }
 .container{
     max-width: 700px;
@@ -118,12 +118,12 @@ form .button input{
     cursor: pointer;
     transition: all 0.3s ease;
     /*background: linear-gradient(135deg, #71b7e6, #9b59b6);*/
-    background: linear-gradient(135deg, #47C7E9, #4B6EBE);
+    background: linear-gradient(135deg, #4B6EBE, #1a1a2e);
 }
 form .button input:hover{
     /* transform: scale(0.99); */
     /*background: linear-gradient(-135deg, #71b7e6, #9b59b6);*/
-    background: linear-gradient(135deg, #4B6EBE, #47C7E9);
+    background: linear-gradient(-135deg, #1a1a2e, #4B6EBE);
 }
 .alert {
     position: relative;

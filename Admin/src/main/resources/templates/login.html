@@ -69,38 +69,39 @@
 <!--</html>-->
 
 
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head>
-    <!-- Design by foolishdeveloper.com -->
     <title>Glassmorphism login Form Tutorial in html css</title>
-
-    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
-    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css}">
-    <link th:href="@{https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap}" rel="stylesheet">
     <link rel="stylesheet" th:href="@{css/login.css}">
-
 </head>
 <body>
-<div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-</div>
-<form>
-    <h3>Login Here</h3>
-
-    <label for="username">Username</label>
-    <input type="text" placeholder="Email or Phone" id="username">
-
-    <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password">
-
-    <button>Log In</button>
-    <div class="social">
-        <a th:href="@{forgot-password}"><div class="go"> Forgot Password</div></a>
-        <a th:href="@{register}"><div class="fb">  Create an Account</div></a>
+<section class="container">
+    <div class="login-container">
+        <div class="circle circle-one"></div>
+        <div class="form-container">
+            <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
+                 alt="illustration" class="illustration"/>
+            <h1 class="opacity">LOGIN</h1>
+            <div th:if="${param.error}" class="alert alert-danger text-center">
+                Invalid username or password
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success text-center">
+                You have been logged out!
+            </div>
+            <form th:action="@{/do-login}" method="post">
+                <input type="text" placeholder="USERNAME"/>
+                <input type="password" placeholder="PASSWORD"/>
+                <button class="opacity">SUBMIT</button>
+            </form>
+            <div class="register-forget opacity">
+                <a th:href="@{/register}" href="register.html">REGISTER</a>
+                <a th:href="@{/forgot-password}" href="forgot-password.html">FORGOT PASSWORD</a>
+            </div>
+        </div>
+        <div class="circle circle-two"></div>
     </div>
-</form>
+    <div class="theme-btn-container"></div>
+</section>
 </body>
 </html>
