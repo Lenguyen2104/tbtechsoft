@@ -5,16 +5,15 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
-body{
+#body-register{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    /*background: linear-gradient(135deg, #71b7e6, #9b59b6);*/
     background: linear-gradient(135deg, #4B6EBE, #1a1a2e);
 }
-.container{
+.container-register{
     max-width: 700px;
     width: 100%;
     background-color: #fff;
@@ -22,12 +21,12 @@ body{
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
-.container .title{
+.container-register .title{
     font-size: 25px;
     font-weight: 500;
     position: relative;
 }
-.container .title::before{
+.container-register .title::before{
     content: "";
     position: absolute;
     left: 0;
@@ -67,41 +66,6 @@ form .input-box span.details{
 .user-details .input-box input:valid{
     border-color: #9b59b6;
 }
-/*form .gender-details .gender-title{*/
-/*    font-size: 20px;*/
-/*    font-weight: 500;*/
-/*}*/
-/*form .category{*/
-/*    display: flex;*/
-/*    width: 80%;*/
-/*    margin: 14px 0 ;*/
-/*    justify-content: space-between;*/
-/*}*/
-/*form .category label{*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    cursor: pointer;*/
-/*}*/
-/*form .category label .dot{*/
-/*    height: 18px;*/
-/*    width: 18px;*/
-/*    border-radius: 50%;*/
-/*    margin-right: 10px;*/
-/*    background: #d9d9d9;*/
-/*    border: 5px solid transparent;*/
-/*    transition: all 0.3s ease;*/
-/*}*/
-/*#dot-1:checked ~ .category label .one,*/
-/*#dot-2:checked ~ .category label .two,*/
-/*#dot-3:checked ~ .category label .three{*/
-/*    background: #9b59b6;*/
-/*    border-color: #d9d9d9;*/
-/*}*/
-
-
-/*form input[type="radio"]{*/
-/*    display: none;*/
-/*}*/
 form .button{
     height: 45px;
     margin: 35px 0
@@ -143,7 +107,7 @@ form .button input:hover{
     border-color: #bff0de;
 }
 @media(max-width: 584px){
-    .container{
+    .container-register{
         max-width: 100%;
     }
     form .user-details .input-box{
@@ -162,7 +126,18 @@ form .button input:hover{
     }
 }
 @media(max-width: 459px){
-    .container .content .category{
+    .container-register .content .category{
         flex-direction: column;
     }
+}
+
+.register-login {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.register-login a {
+    text-decoration: none;
+    color: #0c0c0c;
 }

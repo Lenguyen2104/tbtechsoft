@@ -71,12 +71,10 @@
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <title>Glassmorphism login Form Tutorial in html css</title>
-    <link rel="stylesheet" th:href="@{css/login.css}">
+<head th:replace="~{fragments::header}">
 </head>
-<body>
-<section class="container">
+<body id="body-login">
+<section class="container-login">
     <div class="login-container">
         <div class="circle circle-one"></div>
         <div class="form-container">
@@ -90,10 +88,11 @@
                 You have been logged out!
             </div>
             <form th:action="@{/do-login}" method="post">
-                <input type="text" placeholder="USERNAME"/>
-                <input type="password" placeholder="PASSWORD"/>
+                <input type="email" name="username" id="username" placeholder="USERNAME"/>
+                <input type="password" name="password" id="password" placeholder="PASSWORD"/>
                 <button class="opacity">SUBMIT</button>
             </form>
+            <hr>
             <div class="register-forget opacity">
                 <a th:href="@{/register}" href="register.html">REGISTER</a>
                 <a th:href="@{/forgot-password}" href="forgot-password.html">FORGOT PASSWORD</a>

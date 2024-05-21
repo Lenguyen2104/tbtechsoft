@@ -1,8 +1,3 @@
-:root {
-    --background: linear-gradient(135deg, #4B6EBE, #1a1a2e);
-    --color: #ffffff;
-    --primary-color: #4B6EBE;
-}
 
 * {
     box-sizing: border-box;
@@ -12,12 +7,12 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+#body-login {
     margin: 0;
     box-sizing: border-box;
     font-family: "poppins";
-    background: var(--background);
-    color: var(--color);
+    background: linear-gradient(135deg, #4B6EBE, #1a1a2e);
+    color: #ffffff;
     letter-spacing: 1px;
     transition: background 0.2s ease;
     -webkit-transition: background 0.2s ease;
@@ -26,16 +21,16 @@ body {
     -o-transition: background 0.2s ease;
 }
 
-a {
+.register-forget a {
     text-decoration: none;
-    color: var(--color);
+    color: #ffffff;
 }
 
 h1 {
     font-size: 2.5rem;
 }
 
-.container {
+.container-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +59,7 @@ h1 {
     padding: 14.5px;
     width: 100%;
     margin: 2rem 0;
-    color: var(--color);
+    color: #ffffff;
     outline: none;
     background-color: #9191911f;
     border: none;
@@ -86,8 +81,8 @@ h1 {
 }
 
 .login-container form button {
-    background-color: var(--primary-color);
-    color: var(--color);
+    background-color: #4B6EBE;
+    color: #ffffff;
     display: block;
     padding: 13px;
     border-radius: 5px;
@@ -122,7 +117,7 @@ h1 {
 .circle {
     width: 8rem;
     height: 8rem;
-    background: var(--primary-color);
+    background: #4B6EBE;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -164,9 +159,6 @@ h1 {
     margin: 1rem 0;
     display: flex;
     justify-content: space-between;
-}
-.opacity {
-    opacity: 0.6;
 }
 
 .theme-btn-container {
